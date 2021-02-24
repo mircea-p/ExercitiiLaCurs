@@ -18,7 +18,9 @@ public class Main {
         // Task 7
        // fibonacci(5);
         // Task 8
-        calculator();
+        //calculator();
+        //Task 9
+        printWave(26);
     }
     public static void fizzBuzz(int x){
         for(int i = 1; i <= x; i++){
@@ -120,6 +122,32 @@ public class Main {
                 break;
             default:
                 System.out.println("Ïnvalid symbol: " + c);
+        }
+    }
+
+    public static void printWave(int n){
+      String[][] matr = new String[4][n];
+        int k=0,i=0,j=0;
+
+        while(j<n){
+            {
+                for(i=0; i < 4 && j < n; i++) {
+                    matr[i][j] = "*";
+                    j++;
+                }
+               for (i = 3; i >= 0 && j < n; i--) {
+                    matr[i][j] ="*";
+                    j++;
+                }
+            }
+        }
+        for(i=0;i<4;i++) {
+            for (j = 0; j < n; j++) {
+                if (matr[i][j] != "*")
+                    matr[i][j] = "0";
+                System.out.print(matr[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
