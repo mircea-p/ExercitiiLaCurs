@@ -20,7 +20,9 @@ public class Main {
         // Task 8
         //calculator();
         //Task 9
-        printWave(4,30);
+        //printWave(4,30);
+        //Task 10
+        calculateSumOfDigits(345);
     }
     public static void fizzBuzz(int x){
         for(int i = 1; i <= x; i++){
@@ -124,7 +126,6 @@ public class Main {
                 System.out.println("Ïnvalid symbol: " + c);
         }
     }
-
     public static void printWave(int l,int n){
       String[][] matr = new String[l][n];
         int i=0,j=0;
@@ -141,9 +142,6 @@ public class Main {
                 }
             }
         }
-
-
-
         for(i=0;i<l;i++) {
             for (j = 0; j < n; j++) {
                 if (matr[i][j]==null)
@@ -152,6 +150,14 @@ public class Main {
             }
             System.out.println();
         }
+    }
+    public static void calculateSumOfDigits(int n){
+        int sum=0, n1=0;
+        while(n != 0){
+            sum += n % 10;
+            n /= 10;
+        }
+        System.out.println(sum);
     }
 }
 
