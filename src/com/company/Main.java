@@ -20,7 +20,7 @@ public class Main {
         // Task 8
         //calculator();
         //Task 9
-        printWave(26);
+        printWave(4,30);
     }
     public static void fizzBuzz(int x){
         for(int i = 1; i <= x; i++){
@@ -125,26 +125,29 @@ public class Main {
         }
     }
 
-    public static void printWave(int n){
-      String[][] matr = new String[4][n];
-        int k=0,i=0,j=0;
+    public static void printWave(int l,int n){
+      String[][] matr = new String[l][n];
+        int i=0,j=0;
 
         while(j<n){
             {
-                for(i=0; i < 4 && j < n; i++) {
+                for(i=0; i < l && j < n; i++) {
                     matr[i][j] = "*";
                     j++;
                 }
-               for (i = 3; i >= 0 && j < n; i--) {
+               for (i = l-1; i >= 0 && j < n; i--) {
                     matr[i][j] ="*";
                     j++;
                 }
             }
         }
-        for(i=0;i<4;i++) {
+
+
+
+        for(i=0;i<l;i++) {
             for (j = 0; j < n; j++) {
-                if (matr[i][j] != "*")
-                    matr[i][j] = "0";
+                if (matr[i][j]==null)
+                    matr[i][j] = " ";
                 System.out.print(matr[i][j] + " ");
             }
             System.out.println();
