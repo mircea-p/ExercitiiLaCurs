@@ -166,19 +166,18 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println("Introduceti text de la tastatura: ");
         String text;
-        String maxtext = "a";
-        int max=0;
+        String maxtext = "";
         do{
            text = scan.nextLine();
-            if(max < text.length()) {
-                max = text.length();
+            if(maxtext.length() < text.length() && !text.equals("Enough!")) {
                 maxtext = text;
             }
         }while(!text.equals("Enough!"));
-        System.out.println("Textul cel mai lung este: " + maxtext);
+        if(maxtext.equals(""))
+            System.out.println("No text provided!");
+        else
+            System.out.println("Textul cel mai lung este: " + maxtext);
     }
-
-
 }
 
 
