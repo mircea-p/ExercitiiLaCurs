@@ -22,7 +22,9 @@ public class Main {
         //Task 9
         //printWave(4,30);
         //Task 10
-        calculateSumOfDigits(345);
+        //calculateSumOfDigits(345);
+        // Task 11
+        findLongestUserInput();
     }
     public static void fizzBuzz(int x){
         for(int i = 1; i <= x; i++){
@@ -159,6 +161,24 @@ public class Main {
         }
         System.out.println(sum);
     }
+    public static void findLongestUserInput(){
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduceti text de la tastatura: ");
+        String text;
+        String maxtext = "a";
+        int max=0;
+        do{
+           text = scan.nextLine();
+            if(max < text.length()) {
+                max = text.length();
+                maxtext = text;
+            }
+        }while(!text.equals("Enough!"));
+        System.out.println("Textul cel mai lung este: " + maxtext);
+    }
+
+
 }
 
 
