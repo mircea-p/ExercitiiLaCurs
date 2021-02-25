@@ -24,7 +24,9 @@ public class Main {
         //Task 10
         //calculateSumOfDigits(345);
         // Task 11
-        findLongestUserInput();
+       // findLongestUserInput();
+        //Task 12
+        calculateSpacePercentage();
     }
     public static void fizzBuzz(int x){
         for(int i = 1; i <= x; i++){
@@ -177,6 +179,18 @@ public class Main {
             System.out.println("No text provided!");
         else
             System.out.println("Textul cel mai lung este: " + maxtext);
+    }
+    public static void calculateSpacePercentage(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduceti text de la tastatura: ");
+        String text = scan.nextLine();
+       float sp=0;
+        for(int i = 0; i < text.length(); i++){
+            if(text.charAt(i) == ' ')
+                sp++;
+        }
+        System.out.println("Textul contine spatii: " + (sp/text.length())*100 + " %");
+
     }
 }
 
