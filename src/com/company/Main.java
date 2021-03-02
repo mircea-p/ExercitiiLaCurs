@@ -26,7 +26,11 @@ public class Main {
         // Task 11
        // findLongestUserInput();
         //Task 12
-        calculateSpacePercentage();
+        //calculateSpacePercentage();
+        //Task 13
+       // stutter();
+        //Task 14
+        countCaractersBetween();
     }
     public static void fizzBuzz(int x){
         for(int i = 1; i <= x; i++){
@@ -190,6 +194,45 @@ public class Main {
                 sp++;
         }
         System.out.println("Textul contine spatii: " + (sp/text.length())*100 + " %");
+
+    }
+    public static void stutter(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduceti tetul: ");
+        String text = scan.nextLine();
+        String[] words = text.split(" ");
+        String[] dwords = new String[words.length*2];
+////        for(String element : words) {
+////            System.out.print(element + " " + element+ " ");
+//        }
+        int i=0;
+        for(String element : words){
+            dwords[i] = element;
+            dwords[i+1] = element;
+            i+=2;
+        }
+        for(String ele : dwords)
+            System.out.print(ele + " ");
+
+    }
+    public static void countCaractersBetween(){
+        Scanner scan = new Scanner(System.in);
+       System.out.println("Introduceti doua caractere: ");
+        char c1,c2;
+        c1 = scan.next().charAt(0);
+        c2 = scan.next().charAt(0);
+        int n1,n2;
+        n1 = (int) c1;
+        n2 = (int) c2;
+        if ((n1 >= (int)'a' && n1 <= (int)'z') && (n2 >= (int)'a' && n2 <= (int)'z')) {
+            if (n2 == n1)
+                System.out.println(0);
+            else if (n2 > n1)
+                System.out.println(n2 - n1 - 1);
+            else
+                System.out.println(n1 - n2 - 1);
+        }else
+            System.out.println("Invalid input!");
 
     }
 }
