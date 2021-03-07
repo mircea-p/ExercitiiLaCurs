@@ -30,7 +30,11 @@ public class Main {
         //Task 13
        // stutter();
         //Task 14
-        countCaractersBetween();
+      //  countCaractersBetween();
+        //Task 15
+       // arbitrarlyNumers();
+        //Task 16
+        subsequence();
     }
     public static void fizzBuzz(int x){
         for(int i = 1; i <= x; i++){
@@ -234,6 +238,65 @@ public class Main {
         }else
             System.out.println("Invalid input!");
 
+    }
+    public static void arbitrarlyNumers(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduceti zece numere aleatorii: ");
+        int nre[] = new int[10];
+        for(int i = 0; i < 10; i++)
+            nre[i] = scan.nextInt();
+
+        int[] unic = new int[10];
+
+        int eg=0, k=0;
+        for(int i = 0; i < 10; i++) {
+            eg=0;
+            for (int j = 0; j < 10; j++) {
+                if (nre[i] == nre[j])
+                    eg++;
+            }
+            if(eg >= 2 && k == 0) {
+                unic[k] = nre[i];
+                k++;
+            }else if(eg >= 2){
+
+                int eg2 = 0;
+                for (int l = 0; l < k; l++) {
+                    if (unic[l] == nre[i]) {
+                        eg2 = 1;
+                    }
+                }
+                    if (eg2 == 0)  {
+                        unic[k] = nre[i];
+                        k++;
+                    }
+            }
+        }
+        for(int i = 0; i < k; i++)
+            System.out.print(unic[i] + " ");
+    }
+    public static void subsequence(){
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduceti zece numere aleatorii: ");
+        int nre[] = new int[10];
+        for(int i = 0; i < 10; i++)
+            nre[i] = scan.nextInt();
+        int i = 0,k = 1, max = 0;
+        while( i < 9){
+            if(nre[i] < nre[i+1])
+            {
+                i++;
+                k++;
+            }else if(max <= k) {
+                max = k;
+                k=1;
+                i++;
+            }else
+                i++;
+
+        }
+        System.out.println("The longest increasing sequence is: " + max);
     }
 }
 
