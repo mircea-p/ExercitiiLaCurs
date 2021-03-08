@@ -1,6 +1,16 @@
 package com.company;
 
+import java.lang.reflect.Array;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Date;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static jdk.nashorn.internal.objects.NativeDate.getYear;
+import static jdk.nashorn.internal.objects.NativeDate.setYear;
 
 public class Main {
 
@@ -34,7 +44,11 @@ public class Main {
         //Task 15
        // arbitrarlyNumers();
         //Task 16
-        subsequence();
+       // subsequence();
+        // Task 17
+        //nextDateClasses();
+        // Task 18
+        sneeze();
     }
     public static void fizzBuzz(int x){
         for(int i = 1; i <= x; i++){
@@ -297,6 +311,35 @@ public class Main {
 
         }
         System.out.println("The longest increasing sequence is: " + max);
+    }
+    public static void nextDateClasses(){
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Write the date of your next SDA class of type YYYY-MM-dd: ");
+        String readDate = scan.nextLine();
+        LocalDate date = LocalDate.parse(readDate);
+        System.out.println(date);
+        LocalDate now = LocalDate.now();
+        System.out.println(Period.between(now,date));
+    } // Ex 17 -???? Local Date
+    public static void sneeze(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Write a text: ");
+        String text = scan.nextLine();
+        Pattern p1 = Pattern.compile("acho+");
+        Matcher mac = p1.matcher(text);
+        System.out.println("Textul este: " + text);
+        if(mac.matches())
+            System.out.println(" A stranutat!!!!");
+        else
+            System.out.println("Nu a stranutat.");
+
+    } // Ex 18 - ok!
+    public static void guessNumber(){
+       Random r = new Random();
+       int nr = r.nextInt(100);
+       Scanner scan = Scanner()
+
     }
 }
 
